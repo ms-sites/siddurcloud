@@ -219,7 +219,7 @@ html {
   }
   
   /* ==========================================================================
-     Start of base Webflow CSS - If you're looking for some ultra-clean CSS, skip the boilerplate and see the unminified code below.
+     Start of base webflow CSS - If you're looking for some ultra-clean CSS, skip the boilerplate and see the unminified code below.
      ========================================================================== */
   @font-face {
     font-family: 'webflow-icons';
@@ -343,7 +343,7 @@ html {
     color: transparent !important
   }
   
-  .w-webflow-badge,
+  /* .w-webflow-badge,
   .w-webflow-badge * {
     position: static;
     left: auto;
@@ -404,9 +404,9 @@ html {
     word-break: normal;
     word-spacing: normal;
     word-wrap: normal
-  }
+  } */
   
-  .w-webflow-badge {
+  /* .w-webflow-badge {
     position: fixed !important;
     display: inline-block !important;
     visibility: visible !important;
@@ -438,7 +438,7 @@ html {
     visibility: visible !important;
     opacity: 1 !important;
     vertical-align: middle !important
-  }
+  } */
   
   h1,
   h2,
@@ -2285,7 +2285,7 @@ html {
   }
   
   /* ==========================================================================
-     Start of custom Webflow CSS
+     Start of custom webflow CSS
      ========================================================================== */
   .w-layout-grid {
     display: -ms-grid;
