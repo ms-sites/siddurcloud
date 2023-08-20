@@ -250,11 +250,13 @@
             <div class="card-img-overlay">
             </div>
           </div>
-          <div class="card-content-wrapper" onclick="openPopup('card1')">
+          <div class="card-content-wrapper" onclick="openLightbox('card1')">
             <h4 class="card-h3">Card 1
             </h4>
             <p class="card-p">Lorem ipsum dolor sit ame, consectetur adipiscing elit.
             </p>
+            <a href="#" class="card-link">Read more
+            </a>
           </div>
         </div>
         <div class="card-wrapper">
@@ -289,12 +291,13 @@
             </a>
           </div>
         </div>
-        <div class="popup" id="imagePopup">
-          <span class="close-btn" onclick="closePopup()">&times;</span>
-          <div class="popup-content" id="popupImageContent">
-            <!-- Images will be dynamically added here -->
-          </div>
-        </div>      
+              
+      </div>
+      <div class="lightbox" id="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content" id="lightboxContent">
+          <!-- Images will be dynamically added here -->
+        </div>
       </div>
     </div>
   </div>
@@ -495,38 +498,26 @@
     requestAnimationFrame(update);;
   </script>
   <script>
-    function openPopup(cardId) {
-      var popup = document.getElementById("imagePopup");
-      popup.style.display = "block";
+    function openLightbox(cardId) {
+      var lightbox = document.getElementById("lightbox");
+      lightbox.style.display = "block";
 
       var images = getImagesForCard(cardId);
 
-      var popupContent = popup.querySelector("#popupImageContent");
-      popupContent.innerHTML = ""; // Clear existing content
+      var lightboxContent = document.getElementById("lightboxContent");
+      lightboxContent.innerHTML = "";
 
       images.forEach(function(imageSrc) {
         var img = document.createElement("img");
         img.src = imageSrc;
-        popupContent.appendChild(img);
+        lightboxContent.appendChild(img);
       });
     }
 
-    // Replace this function with your logic to fetch images for each card
-    function getImagesForCard(cardId) {
-      if (cardId === "card1") {
-        return ["image1_card1.jpg", "image2_card1.jpg"];
-      } else if (cardId === "card2") {
-        return ["image1_card2.jpg", "image2_card2.jpg"];
-      }
-      // Add more conditions as needed
-      return [];
+    function closeLightbox() {
+      var lightbox = document.getElementById("lightbox");
+      lightbox.style.display = "none";
     }
-
-    function closePopup() {
-      var popup = document.getElementById("imagePopup");
-      popup.style.display = "none";
-    }
-
   </script>
 </body>
 
